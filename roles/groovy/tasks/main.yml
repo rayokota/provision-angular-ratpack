@@ -1,0 +1,12 @@
+---
+- name: Install unzip
+  apt: pkg=unzip
+
+- name: Install GVM
+  shell: curl -s get.gvmtool.net | bash
+
+- name: Make GVM non-interactive
+  lineinfile: dest=~/.gvm/etc/config regexp=^gvm_auto_answer= line=gvm_auto_answer=true
+
+- name: Install Groovy
+  shell: source "$HOME/.gvm/bin/gvm-init.sh" && gvm install groovy
