@@ -4,9 +4,16 @@
 
 - name: Install GVM
   shell: curl -s get.gvmtool.net | bash
+  sudo: false
 
 - name: Make GVM non-interactive
   lineinfile: dest=~/.gvm/etc/config regexp=^gvm_auto_answer= line=gvm_auto_answer=true
+  sudo: false
 
 - name: Install Groovy
-  shell: source "$HOME/.gvm/bin/gvm-init.sh" && gvm install groovy
+  shell: /bin/bash -c "source ~/.gvm/bin/gvm-init.sh && gvm install groovy"
+  sudo: false
+
+- name: Comment out line which prevents loading bash profile by ssh
+  lineinfile: dest=~/.bashrc regexp='[ -z "$PS1" ] && return' line='# [ -z "$PS1" ] && return' state=present
+  sudo: false
