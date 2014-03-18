@@ -22,7 +22,7 @@
 - name: Run application
   shell: chdir=/tmp/testapp nohup groovy -Dratpack.port=8080 app.groovy >app.log 2>&1 &
   sudo: false
-  async: 10
+  async: 60
   poll: 0
 
 - name: Wait for application
