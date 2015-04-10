@@ -11,7 +11,7 @@
   sudo: false
 
 - name: Install Groovy
-  shell: /bin/bash -c "source ~/.gvm/bin/gvm-init.sh && gvm install groovy"
+  shell: /bin/bash -c "source ~/.gvm/bin/gvm-init.sh && gvm install groovy && gvm install gradle"
   sudo: false
 
 - name: Comment out line which prevents loading bash profile by ssh

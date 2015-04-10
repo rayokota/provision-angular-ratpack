@@ -20,7 +20,7 @@
   sudo: false
 
 - name: Run application
-  shell: chdir=/tmp/testapp nohup groovy -Dratpack.port=8080 app.groovy >app.log 2>&1 &
+  shell: chdir=/tmp/testapp nohup gradle run >app.log 2>&1 &
   sudo: false
   async: 60
   poll: 0

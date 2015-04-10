@@ -5,7 +5,7 @@
 
   roles:
     - common
-    - java7
+    - java8
     - groovy
     - generator
     - { role: generate_testapp, when: "generate_testapp is defined and generate_testapp|bool" }
